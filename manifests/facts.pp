@@ -24,7 +24,7 @@ class bitbucket::facts(
 ) inherits bitbucket {
 
   if $::osfamily == 'RedHat' and $::puppetversion !~ /Puppet Enterprise/ {
-    ensure_packages ($json_packages, { ensure => present })
+    stdlib::ensure_packages ($json_packages, { ensure => present })
   }
 
   if $is_https {
